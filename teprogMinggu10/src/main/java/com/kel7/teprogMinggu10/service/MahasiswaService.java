@@ -15,7 +15,7 @@ public class MahasiswaService
 MahasiswaRepository MhsRepository;
 
 
-//getting all books record by using the method findaAll() of CrudRepository  
+//getting all record by using the method findaAll() of CrudRepository  
 public List<Mahasiswa> getAllMahasiswas()   
 {  
 List<Mahasiswa> Mhslist = new ArrayList<Mahasiswa>();  
