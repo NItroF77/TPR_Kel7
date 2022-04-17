@@ -21,15 +21,15 @@ public class MahasiswaController
 BooksService booksService;  
 //creating a get mapping that retrieves all the books detail from the database   
 @GetMapping("/mahasiswa")  
-private List<Books> getAllMahasiswa()   
+private List<Mahasiswa> getAllMahasiswa()   
 {  
 return booksService.getAllMahasiswa();  
 }  
 //creating a get mapping that retrieves the detail of a specifi"/mahasiswa  
 @GetMapping("/mahasiswa/{NIM}")  
-private Books getBooks(@PathVariable("NIM") int NIM)   
+private Mahasiswa getBMahasiswathVariable("NIM") int NIM)   
 {  
-return booksService.getBooksById(NIM);  
+return booksService.getById(NIM);  
 }  
 //creating a delete mapping that deletes a specifie"/mahasiswa  
 @DeleteMapping("/mahasiswa/{NIM}")  
@@ -39,14 +39,14 @@ booksService.delete(NIM);
 }  
 //creating post mapping that post th"/mahasiswa detail in the database  
 @PostMapping("/books")  
-private int saveBook(@RequestBody Books books)   
+private int saveBook(@RequestBody Mahasiswa books)   
 {  
 booksService.saveOrUpdate(books);  
 return books.getBookid();  
 }  
 //creating put mapping that updates th"/mahasiswa detail   
 @PutMapping("/books")  
-private Books update(@RequestBody Books books)   
+private Mahasiswa update(@RequestBody Mahasiswa books)   
 {  
 booksService.saveOrUpdate(books);  
 return books;  
