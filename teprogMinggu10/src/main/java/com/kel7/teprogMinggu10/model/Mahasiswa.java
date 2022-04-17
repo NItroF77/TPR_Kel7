@@ -37,8 +37,8 @@ public String getProdi()
 {  
 return Prodi;
 }  
-public void setAuthor(String Prodi)   
-{  
+public void setProdi(String Prodi)   
+{
 this.Prodi = Prodi;
 }  
 

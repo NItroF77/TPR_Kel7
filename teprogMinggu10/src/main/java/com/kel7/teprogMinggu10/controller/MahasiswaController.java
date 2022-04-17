@@ -2,7 +2,7 @@ package com.kel7.teprogMinggu10.controller;
 import java.util.List;
 
 import com.kel7.teprogMinggu10.model.Mahasiswa;
-import com.kel7.teprogMinggu10.service.BooksService;
+import com.kel7.teprogMinggu10.service.MahasiswaService;
 
 import org.springframework.beans.factory.annotation.Autowired;  
 import org.springframework.web.bind.annotation.DeleteMapping;  
@@ -16,39 +16,39 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController  
 public class MahasiswaController   
 {  
-//autowire the BooksService class  
+//autowire the MahasiswaService class  
 @Autowired  
-BooksService booksService;  
-//creating a get mapping that retrieves all the books detail from the database   
-@GetMapping("/mahasiswa")  
-private List<Mahasiswa> getAllMahasiswa()   
+MahasiswaService mahasiswaService; 
+//creating a get mapping that retrieves all the mahasiswas detail from the database   
+@GetMapping("/mahasiswas")  
+private List<Mahasiswa> getAllMahasiswas()   
 {  
-return booksService.getAllMahasiswa();  
+return mahasiswaService.getAllMahasiswas();  
 }  
 //creating a get mapping that retrieves the detail of a specifi"/mahasiswa  
 @GetMapping("/mahasiswa/{NIM}")  
-private Mahasiswa getBMahasiswathVariable("NIM") int NIM)   
+private Mahasiswa getMahasiswa(@PathVariable("NIM") int NIM)   
 {  
-return booksService.getById(NIM);  
+return mahasiswaService.getMahasiswabyId(NIM);  
 }  
 //creating a delete mapping that deletes a specifie"/mahasiswa  
 @DeleteMapping("/mahasiswa/{NIM}")  
-private void deleteBook(@PathVariable("NIM") int NIM)   
+private void deleteMahasiswa(@PathVariable("NIM") int NIM)   
 {  
-booksService.delete(NIM);  
+mahasiswaService.delete(NIM);  
 }  
 //creating post mapping that post th"/mahasiswa detail in the database  
-@PostMapping("/books")  
-private int saveBook(@RequestBody Mahasiswa books)   
+@PostMapping("/mahasiswas")  
+private int saveMahasiswa(@RequestBody Mahasiswa mahasiswas)   
 {  
-booksService.saveOrUpdate(books);  
-return books.getBookid();  
+mahasiswaService.saveOrUpdate(mahasiswas);  
+return mahasiswas.getNIM();  
 }  
 //creating put mapping that updates th"/mahasiswa detail   
-@PutMapping("/books")  
-private Mahasiswa update(@RequestBody Mahasiswa books)   
+@PutMapping("/mahasiswas")  
+private Mahasiswa update(@RequestBody Mahasiswa mahasiswas)   
 {  
-booksService.saveOrUpdate(books);  
-return books;  
+mahasiswaService.saveOrUpdate(mahasiswas);  
+return mahasiswas;  
 }  
 }  
