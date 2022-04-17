@@ -9,7 +9,7 @@ import javax.persistence.Table;
 @Table  
 public class Mahasiswa
 {  
-//Defining book id as primary key  
+//Defining id as primary key  
 @Id  
 @Column  
 private int NIM;  
